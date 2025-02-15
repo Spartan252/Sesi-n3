@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Categoría A</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/39f78fcbb4.js" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body style="background-color: rgb(12, 39, 74);">
+        <!-- Barra de navegación -->
+        <nav
+            class="navbar navbar-expand-sm navbar-dark bg-dark position-sticky top-0 start-0" style="z-index: 1000;"
+        >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Google_Earth_icon.svg/2048px-Google_Earth_icon.svg.png" alt="img" class="logo" style="width: 35px; height: 35px;"></a>
+                <button
+                    class="navbar-toggler d-lg-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0" style="align-items: center;">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="home" aria-current="page"
+                                >Inicio
+                                <span class="visually-hidden">(current)</span></a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about_us">Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="dropdownId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >Productos</a
+                            >
+                            <div
+                                class="dropdown-menu"
+                                aria-labelledby="dropdownId"
+                            >
+                                <a class="dropdown-item" href="cat_A"
+                                    >Categoría A</a
+                                >
+                                <a class="dropdown-item" href="cat_B"
+                                    >Categoría B</a
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="d-flex my-2 my-lg-0">
+                        <input
+                            class="form-control me-sm-2"
+                            type="text"
+                            placeholder="Buscar productos..."
+                        />
+                        <button
+                            class="btn btn-secondary my-2 my-sm-0"
+                            type="submit"
+                        >
+                            Buscar
+                        </button>
+                        
+                    </form>
+                    <a href="shopping_cart"><i class='fas fa-shopping-cart' role="button" style='font-size:36px; color: rgb(208, 204, 204);margin-left: 10px;'></i></a>
+                    <a href="#"><i class='fas fa-user-circle' role="button" style='font-size:36px; color: #cdc5c5; margin-left: 10px;' data-bs-toggle="modal" data-bs-target="#loginModal"></i></a>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Texto -->
+        <h1 style="color: rgb(197, 211, 224); text-align: center; padding-top: 20px;">Categoría A</h1>
+        
+
+        <!-- Productos -->
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <!-- Elemento -->
+                <div class="col" style="max-height: 400px; min-height: 300px;">
+                    <div class="card h-100" style="overflow: hidden; box-shadow: 4px 3px 4px; border-color: black; border-radius: 30px;">
+                        <img src="https://media.gq.com.mx/photos/623f7ab8eaa378c48316e6db/3:2/w_2556,h_1704,c_limit/mercurio.jpg" class="card-img-top" alt="Mercurio">
+                        <div class="card-body" style="background-color:rgb(64, 111, 173);">
+                            <p class="card-title" style="text-align: center; font-size: x-large; border-radius: 30px; background-color: rgb(35, 78, 143);"><b>Mercurio</b></p>
+                            <p class="card-text" style="text-align: center; border-radius: 10px;"><b> Mira, soy Mercurio, comprame</b></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Elemento -->
+                <div class="col" style="max-height: 400px;">
+                    <div class="card h-100" style="overflow: hidden; box-shadow: 3px 3px 3px; border-color: black; border-radius: 30px;">
+                        <img src="https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-venus_d6349041_800x800.jpg" class="card-img-top" alt="Venus">
+                        <div class="card-body" style="background-color:rgb(64, 111, 173);">
+                            <p class="card-title" style="text-align: center; font-size: x-large; border-radius: 30px; background-color: rgb(35, 78, 143);"><b>Venus</b></p>
+                            <p class="card-text" style="text-align: center; border-radius: 10px;"><b>Mira, soy Venus, comprame</b></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Elemento -->
+                <div class="col" style="max-height: 400px;">
+                    <div class="card h-100" style="overflow: hidden; box-shadow: 3px 3px 3px; border-color: black; border-radius: 30px;">
+                        <img src="https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-tierra_608b9ad4_800x800.jpg" class="card-img-top" alt="Tierra">
+                        <div class="card-body" style="background-color:rgb(64, 111, 173);">
+                            <p class="card-title" style="text-align: center; font-size: x-large; border-radius: 30px; background-color: rgb(35, 78, 143);"><b>Tierra</b></p>
+                            <p class="card-text" style="text-align: center; border-radius: 10px;"><b>Mira, soy Tierra, comprame</b></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Elemento -->
+                <div class="col" style="max-height: 400px;">
+                    <div class="card h-100" style="overflow: hidden; box-shadow: 3px 3px 3px; border-color: black; border-radius: 30px;">
+                        <img src="https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-marte_e9b53cea_800x758.jpg" class="card-img-top" alt="Marte">
+                        <div class="card-body" style="background-color:rgb(64, 111, 173);">
+                            <p class="card-title" style="text-align: center; font-size: x-large; border-radius: 30px; background-color: rgb(35, 78, 143);"><b>Marte</b></p>
+                            <p class="card-text" style="text-align: center; border-radius: 10px;"><b>Mira, soy Marte, comprame</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Modal de Inicio de Sesión -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                    <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                                    <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Recordar</label>
+                                </div>
+                                <div style="text-align: center;">
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <p>¿No tienes cuenta? <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#registroModal">Regístrate aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal de Registro de Usuarios -->
+        <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registroModalLabel">Registrarse</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="container">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" placeholder="Nombre(s)" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" placeholder="Apellidos" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" placeholder="Contraseña" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" placeholder="Confirmar contraseña" required>
+                            </div>
+                            <div style="text-align: center;">
+                                <button type="submit" class="btn btn-success">Registrarse</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </body>
+</html>

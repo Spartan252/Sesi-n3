@@ -1,0 +1,31 @@
+
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "nombre": "Dorxote",
+    "correo": "mana@gmail.com",
+    "password": "pass123",
+    "edad": 33,
+    "sexo": "M"
+}
+
+###
+GET http://localhost:3000/api/users?nombre=D
+
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "nombre": "Drácula",
+    "correo": "conde@gmail.com",
+    "password": "sangre",
+    "edad": 111,
+    "sexo": "M"
+}
+
+###
+GET http://localhost:3000/api/users?nombre=D
+

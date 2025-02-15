@@ -1,0 +1,29 @@
+
+
+//NOTA: El "send Request" solo aparecen en el primer link
+//a menos de que pongas ###
+
+###
+// Request a jsonplaceholder/users
+Send Request
+GET https://jsonplaceholder.typicode.com/users
+
+###
+// Request a un usuario en específico
+Send Request
+GET https://jsonplaceholder.typicode.com/users/10
+
+###
+// Request a un usuario que no existe:
+Send Request
+GET https://jsonplaceholder.typicode.com/users/100
+
+###
+Send Request
+POST https://jsonplaceholder.typicode.com/users HTTP/1.1
+
+content-type: application/json
+{
+    "name": "Ulises el Dorx",
+    "username": "dorx.el.chidote"
+}

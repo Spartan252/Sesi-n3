@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sesión 7</title>
+
+    </head>
+
+    <body>
+        
+        <p>JS se ejecutó antes que esta línea</p>
+        <script>
+            alert("Soy una alerta")
+        </script>
+        <p>Cargado</p>
+        <script>
+            //números
+            let number_1 = 3;
+            let number_2 = 3.14159;
+
+            //Cadenas de texto
+            let string_1 = "Cadena 1";
+            let string_2 = 'Cadena 2';
+            let string_3 = 'Cadena ' + number_1;
+
+            //Booleanos
+            let boolean_1 =true;
+            let boolean_2 = false;
+
+            //Arreglos
+            let array_1 =[
+
+            ];
+
+            // Operadores:
+
+            console.log(number_1 + number_2); //suma
+            console.log(string_1 + string_2); //concatena
+            console.log(number_1 - number_2);//resta
+            console.log(number_1 * 2.5);//multiplica
+            console.log(number_1 / number_2);//divide
+            console.log(number_1 = number_2);//asigna a number1
+            console.log(2**3) //2*2*2 = 8
+            console.log(number_1++);
+            console.log(++number_1);
+            console.log(number_1--);
+
+            // Ciclos While y For:
+                // For
+                console.log('For: ');
+                for (let i = 0; i < 3; i++) {
+                    console.log('Iteración ', i);
+                }
+                console.log('While: ');
+                let j = 0;
+                // While
+                while (j < 3000000) {
+                    console.log('Iteración', j);
+                    j++;
+                }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tarea 6</title>
+    </head>
+
+    <body>
+        <h1 style="margin: 10px;">Mira, unas funciones y operaciones</h1>
+        <script>
+
+        // Ejercicio 1
+            console.log("Ejercicio 1:------------------------------------------------------------");
+            let libros = [];
+
+            for (let i = 0; i < 10; i++) {
+                let libro = {
+                    ID: i + 1,
+                    Autor: "Autor " + Math.floor(Math.random() * 100),
+                    Año: Math.floor(Math.random() * (25)) + 2000,
+                    Fecha: ""
+                };
+                libro.Fecha=new Date(libro.Año + "-01-01T12:00:00.000Z");
+                libros.push(libro);
+            }
+
+            console.log("Libros:");
+            console.table(libros);
+
+            console.log("JSON");
+            let librosJSON = JSON.stringify(libros);
+            console.log(librosJSON);
+
+
+        // Ejercicio 2
+            console.log("Ejercicio 2:------------------------------------------------------------");
+            console.log("Unshift:");
+            let libro_new = {
+                    ID: 42,
+                    Autor: "Autor " + Math.floor(Math.random() * 100),
+                    Año: Math.floor(Math.random() * (25)) + 2000,
+                    Fecha: new Date()
+            };
+            libros.unshift(libro_new);
+            console.table(libros);
+
+            console.log("Arreglo inverso:");
+            function ordenInverso(arregloOriginal) {
+                let nuevoArreglo = [];
+                while (libros.length > 0) {
+                    nuevoArreglo.push(libros.pop());
+                }
+                return nuevoArreglo;
+            }
+
+            let new_libros = ordenInverso(libros);
+
+            console.log("Arreglo original (ahora vacio):", libros);
+            console.log("Libro inverso:");
+            console.table(new_libros);
+
+
+        // Ejercicio 3
+            console.log("Ejercicio 3:------------------------------------------------------------");
+            var Copia = (arr) => {
+                let arr_c = [];
+                arr.forEach (item => {
+                    arr_c.push(Object.assign({}, item));
+                });
+                return arr_c;
+            };
+
+            var Elim_elem = (arr, id) => {
+                return arr.filter(item => item.ID !== id);
+            };
+
+            var Años_libros = (arr, año) => {
+                return arr.filter(item => item.Año <= año);
+            };
+
+            let copia_libros = Copia(new_libros);
+            console.log("Copia libro:");
+            console.table(copia_libros);
+
+            let elim_copia_libros = Elim_elem(copia_libros, 5);
+            console.log("Elemento elimidado de copia libro:");
+            console.table(elim_copia_libros);
+
+            let años_libros = Años_libros(copia_libros, 2010);
+            console.log("Filtrar por año en la copia del libro:");
+            console.table(años_libros);
+
+
+        // Ejercicio 4
+            console.log("Ejercicio 4:------------------------------------------------------------");
+            console.log("Libros con claves y palabras:");
+            var Crear_Libros = (arr, num) => {
+                for (let i = 0; i < num; i++) {
+                    let libro = {
+                        ID: i + 1,
+                        Clave: Math.floor(Math.random() * 899) + 100,
+                        Autor: "Autor " + Math.floor(Math.random() * 100),
+                        Año: Math.floor(Math.random() * 25) + 2000,
+                        Fecha: "",
+                        Palabras: Math.floor(Math.random() * 99000) + 1000
+                    };
+                    libro.Fecha=new Date(libro.Año + "-01-01T12:00:00.000Z");
+                    arr.push(libro);
+                }
+            };
+
+            let ej4_libros = [];
+            Crear_Libros(ej4_libros, 20);
+            console.table(ej4_libros);
+
+            console.log("Splice elem 7:");
+            let libro = {
+                    ID: 69,
+                    Clave: Math.floor(Math.random() * 899) + 100,
+                    Autor: "Autor " + Math.floor(Math.random() * 100),
+                    Año: Math.floor(Math.random() * 25) + 2000,
+                    Fecha: "",
+                    Palabras: Math.floor(Math.random() * 99000) + 1000
+            };
+            libro.Fecha=new Date(libro.Año + "-01-01T12:00:00.000Z");
+            ej4_libros.splice(7, 0, libro);
+                
+            console.table(ej4_libros);
+
+            console.log("Sort clave:");
+            ej4_libros.sort(function(a, b){return a.Clave - b.Clave});
+            console.table(ej4_libros);
+
+            console.log("Switch-case");
+            function SwitchOperaciones(arr, opción) {
+                switch(opción) {
+                    case 'T':
+                        let Pal_tot = arr.reduce((total, libro) => total + libro.Palabras, 0);
+                        return `La suma total de palabras en los libros es: ${Pal_tot}`;
+                    case 'P':
+                        let Pal_tot_prom = arr.reduce((total, libro) => total + libro.Palabras, 0);
+                        let Pal_prom = Pal_tot_prom / arr.length;
+                        return `El promedio de palabras en los libros es: ${Pal_prom.toFixed(2)}`;
+                    case 'MX':
+                        let Pal_max = arr.reduce((max, libro) => max.Palabras > libro.Palabras ? max : libro);
+                        return `El libro con más palabras es el ID ${Pal_max.ID} con ${Pal_max.Palabras} palabras`;
+                    case 'MN':
+                        let Pal_min = arr.reduce((min, libro) => min.Palabras < libro.Palabras ? min : libro);
+                        return `El libro con menos palabras es el ID ${Pal_min.ID} con ${Pal_min.Palabras} palabras`;
+                    default:
+                        return "Opción no válida";
+                }
+            }
+
+            // Ejemplo de uso
+            console.log(SwitchOperaciones(ej4_libros, 'T'));
+            console.log(SwitchOperaciones(ej4_libros, 'P'));
+            console.log(SwitchOperaciones(ej4_libros, 'MX'));
+            console.log(SwitchOperaciones(ej4_libros, 'MN'));
+
+        </script>
+
+    </body>
+</html>

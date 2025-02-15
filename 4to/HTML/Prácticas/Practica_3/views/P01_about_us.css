@@ -1,0 +1,18 @@
+.loginButton{
+    padding: 10px;
+    color: white;
+    background-color: #6ea8fe;
+    border-radius: 10px;
+    border: none;
+}
+
+.loginButton:hover{
+    background-color: #5481C4;
+}
+
+.modal-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}

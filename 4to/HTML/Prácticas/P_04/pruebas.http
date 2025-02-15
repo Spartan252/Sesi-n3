@@ -1,0 +1,205 @@
+
+### 1. Haz una llamada para mostrar tu arreglo de productos vacío, como prueba inicial.
+GET http://localhost:3000/products
+
+### 2. Haz una llamada a la ruta para crear un producto, sin autenticación para ver el error.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+
+{
+    "_uuid": "3",
+    "_title":"Tierra",
+    "_description":"Mira, soy Tierra, comprame",
+    "_imageURL":"https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-tierra_608b9ad4_800x800.jpg",
+    "_unit":"1",
+    "_stock":20,
+    "_pricePerUnit":350,
+    "_category":"Planeta"
+}
+
+
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "1",
+    "_title":"Mercurio",
+    "_description":"Mira, soy Mercurio, comprame",
+    "_imageURL":"https://media.gq.com.mx/photos/623f7ab8eaa378c48316e6db/3:2/w_2556,h_1704,c_limit/mercurio.jpg",
+    "_unit":"1",
+    "_stock":20,
+    "_pricePerUnit":150,
+    "_category":"Planeta"
+}
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "2",
+    "_title":"Venus",
+    "_description":"Mira, soy Venus, comprame",
+    "_imageURL":"https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-venus_d6349041_800x800.jpg",
+    "_unit":"1",
+    "_stock":10,
+    "_pricePerUnit":120,
+    "_category":"Planeta"
+}
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "3",
+    "_title":"Tierra",
+    "_description":"Mira, soy Tierra, comprame",
+    "_imageURL":"https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-tierra_608b9ad4_800x800.jpg",
+    "_unit":"1",
+    "_stock":20,
+    "_pricePerUnit":350,
+    "_category":"Planeta"
+}
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "4",
+    "_title":"Marte",
+    "_description":"Mira, soy Marte, comprame",
+    "_imageURL":"https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-marte_e9b53cea_800x758.jpg",
+    "_unit":"1",
+    "_stock":30,
+    "_pricePerUnit":250,
+    "_category":"Planeta"
+}
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "5",
+    "_title":"Jupiter",
+    "_description":"Mira, soy Jupiter, comprame",
+    "_imageURL":"https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-jupiter_62aed912_800x800.jpg",
+    "_unit":"1",
+    "_stock":60,
+    "_pricePerUnit":150,
+    "_category":"Planeton"
+}
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "6",
+    "_title":"Saturno",
+    "_description":"Mira, soy Saturno, comprame",
+    "_imageURL":"https://www.ngenespanol.com/wp-content/uploads/2023/06/saturno-asi-es-el-planeta-menos-denso-del-sistema-solar.jpg",
+    "_unit":"1",
+    "_stock":40,
+    "_pricePerUnit":200,
+    "_category":"Planeton"
+}
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "7",
+    "_title":"Urano",
+    "_description":"Mira, soy Urano, comprame",
+    "_imageURL":"https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-urano_0c7434f8_800x800.jpg",
+    "_unit":"1",
+    "_stock":50,
+    "_pricePerUnit":150,
+    "_category":"Planeton"
+}
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "8",
+    "_title":"Neptuno",
+    "_description":"Mira, soy Neptuno, comprame",
+    "_imageURL":"https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-neptuno_3405d5aa_800x798.jpg",
+    "_unit":"1",
+    "_stock":30,
+    "_pricePerUnit":130,
+    "_category":"Planeta"
+}
+
+
+### 4. Elimina un producto.
+DELETE  http://localhost:3000/admin/products/1
+x-auth: admin
+
+
+### 5. Consulta un producto por ID.
+GET http://localhost:3000/products/2
+
+### 6. Consulta un producto con el parámetro de filtrado que prefieras.
+GET http://localhost:3000/products?category=Planeton
+
+### 7. Edita cualquier producto para cambiar su nombre.
+PUT http://localhost:3000/admin/products/4
+Content-Type: application/json
+x-auth: admin
+
+{
+    "_uuid": "4",
+    "_title":"Mercadona",
+    "_description":"Mira nada más, soy Mercadona",
+    "_imageURL":"https://www.nationalgeographic.com.es/medio/2022/06/30/el-planeta-marte_e9b53cea_800x758.jpg",
+    "_unit":"1",
+    "_stock":30,
+    "_pricePerUnit":250,
+    "_category":"Planeta"
+}
+
+### 8. Realiza una llamada de nuevo para ver que tú arreglo de productos va correctamente hasta ahora
+GET http://localhost:3000/products
+
+
+### 9. Añade tres productos a tu carrito con la cantidad que quieras.
+###    Recuerda que la ruta debe de regresaré el carrito como lo tienes en ese momento.
+
+POST http://localhost:3000/products/cart
+Content-Type: application/json
+
+[
+    {
+        "_uuid": "2",
+        "cantidad": "4"
+    },
+    {
+        "_uuid": "3",
+        "cantidad": "2"
+    },
+    {
+        "_uuid": "4",
+        "cantidad": "7"
+    }
+]
+
+### 10. Intenta agregar un producto cuyo ID no exista para verificar el error
+POST http://localhost:3000/products/cart
+Content-Type: application/json
+
+[
+    {
+        "_uuid": "1",
+        "cantidad": 1
+    }
+]
+

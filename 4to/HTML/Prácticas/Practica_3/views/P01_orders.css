@@ -1,0 +1,32 @@
+.loginButton{
+    padding: 10px;
+    color: white;
+    background-color: #6ea8fe;
+    border-radius: 10px;
+    border: none;
+}
+
+.loginButton:hover{
+    background-color: #5481C4;
+}
+
+
+.media{
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 15px;
+    margin-bottom: 15px;
+
+}
+
+
+img{
+    float: right;
+    width: 140px;
+    border-radius: 10px;
+}
+
+
+h3{
+    padding: 10px;
+}

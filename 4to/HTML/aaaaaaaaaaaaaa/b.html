@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta y Agregar Personas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .add-person {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .add-person table {
+            margin-left: 20px;
+        }
+
+        .btn-submit {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="add-person">
+            <h2>Agregar Persona</h2>
+            <form method="post">
+                <table>
+                    <tr>
+                        <td><label for="nombre">Nombre:</label></td>
+                        <td><input type="text" id="nombre" name="nombre" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="apellidos">Apellidos:</label></td>
+                        <td><input type="text" id="apellidos" name="apellidos" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="direccion">Dirección:</label></td>
+                        <td><input type="text" id="direccion" name="direccion" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="edad">Edad:</label></td>
+                        <td><input type="number" id="edad" name="edad" required></td>
+                    </tr>
+                </table>
+                <input type="submit" name="submit" value="Agregar Persona" class="btn-submit">
+            </form>
+
+            <?php
+                if (isset($_POST['submit'])) {
+                    try {
+                        $nombre = $_POST['nombre'];
+                        $apellidos = $_POST['apellidos'];
+                        $dirección = $_POST['dirección'];
+                        $edad = $_POST['edad'];
+                        $objetoPDO = new PDO('mysql:host=localhost; dbname=basededatosnueva', 'usuario', 'passwordnuevo');
+                        $query = "INSERT INTO personas (nombre, apellidos, dirección, edad) VALUES (?, ?, ?, ?)";
+                        $sth = $objetoPDO->prepare($query);
+                        $resultado = $sth->execute([$nombre, $apellidos, $dirección, $edad]);
+
+                        if ($resultado) {
+                            echo "<p>Persona agregada correctamente.</p>";
+                        } else {
+                            echo "<p>Error al agregar persona, revisa los datos.</p>";
+                        }
+                    } catch (PDOException $e) {
+                        echo "<p>¡Error!: " . $e->getMessage() . "</p>";
+                    }
+                }
+            ?>
+        </div>
+
+        <div class="consult-person">
+            <h2>Consulta de Personas</h2>
+            <form method="post">
+                <input type="submit" name="consultar" value="Consultar" class="btn-submit">
+            </form>
+
+            <?php
+                    if (isset($_POST['consultar'])) {
+                        try {
+                            $objetoPDO = new PDO('mysql:host=localhost; dbname=basededatosnueva', 'usuario', 'passwordnuevo');
+                            $query = "SELECT * FROM personas";
+                            $sth = $objetoPDO->prepare($query);
+                            $resultado = $sth->execute();
+
+                            if ($resultado) {
+                                $array_filas = $sth->fetchAll();
+                                if (count($array_filas) > 0) {
+                                    echo "<table>";
+                                    echo "<tr><th>Nombre</th><th>Apellidos</th><th>Dirección</th><th>Edad</th></tr>";
+                                    foreach ($array_filas as $fila_usuario) {
+                                        echo "<tr>";
+                                        echo "<td>" . $fila_usuario['nombre'] . "</td>";
+                                        echo "<td>" . $fila_usuario['apellidos'] . "</td>";
+                                        echo "<td>" . $fila_usuario['dirección'] . "</td>";
+                                        echo "<td>" . $fila_usuario['edad'] . "</td>";
+                                        echo "</tr>";
+                                    }
+                                    echo "</table>";
+                                } else {
+                                    echo "<p>No hay personas registradas.</p>";
+                                }
+                            } else {
+                                echo "<p>La consulta ha producido un error, revísala.</p>";
+                            }
+                        } catch (PDOException $e) {
+                            echo "<p>¡Error!: " . $e->getMessage() . "</p>";
+                        }
+                    }
+                    ?>
+        </div>
+    </div>
+</body>
+</html>

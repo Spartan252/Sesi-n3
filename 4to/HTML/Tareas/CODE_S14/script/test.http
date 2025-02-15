@@ -1,0 +1,62 @@
+// Guardamos la información
+POST https://api.npoint.io/e8f98e9224bb5595ff5d HTTP/1.1
+content-type: application/json
+
+{
+    "var_1": "Dorxini",
+    "var_2": "tu dios",
+    "age": 28
+}
+
+###
+// Obtenemos la información 
+GET https://api.npoint.io/e8f98e9224bb5595ff5d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+// Ejercicios localhost:
+GET http://localhost:3000/users
+
+###
+// Prueba con POST
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+    "name": "Usuario nuevo",
+    "email": "nuevo@gmail.com",
+    "edad": 33,
+    "sexo": "M"
+}
+
+###
+// GET con queryparams:
+GET http://localhost:3000/users?name=Dorx

@@ -1,0 +1,202 @@
+// ================================================================================
+// CREAMOS LOS PRODUCTOS PRIMERO SIENDO QUE TENEMOS EL PRODUCTS.JSON VACIO.
+// ================================================================================
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+
+{
+  "_uuid": "34acf18a-d326-49c2-8215-27ffbff2b8ad",
+  "_title":"Iphone 13",
+  "_description":"Iphone Azul Mar 13 de 128gb",
+  "_imageURL":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-blue_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693063677326",
+  "_unit":"1 pieza",
+  "_stock":22,
+  "_priceUnit":19999.00,
+  "_category":"Celular"
+}
+###
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+  {
+    "_uuid": "2dea0857-069b-48f3-a025-7c6667a69914",
+    "_title":"Airpods Pro",
+    "_description":"Airpods pro 2da generacion",
+    "_imageURL":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MTJV3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1694014871985",
+    "_unit":"1 pieza",
+    "_stock":17,
+    "_priceUnit":5299.00,
+    "_category":"Audifonos"
+  }
+
+###
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+  {
+    "_uuid": "7a08e053-9d64-4bae-a973-c978d0ec1804",
+    "_title":"Cable de energia lightning",
+    "_description":"Cable de 1 metro de carga rapida",
+    "_imageURL":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MD818?wid=1144&hei=1144&fmt=jpeg&qlt=95&.v=1600799997000",
+    "_unit":"1 pieza",
+    "_stock":30,
+    "_priceUnit":549.00,
+    "_category":"Cables"
+  }
+
+###
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+  {
+    "_uuid": "208981ac-8907-4595-96e1-41a3a3b73c6e",
+    "_title":"Adaptador de corriente",
+    "_description":"Adaptador de USB-C de 20W",
+    "_imageURL":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MU7T2_GEO_MX?wid=1489&hei=2390&fmt=jpeg&qlt=95&.v=1542406403259",
+    "_unit":"1 pieza",
+    "_stock":55,
+    "_priceUnit":549.00,
+    "_category":"Adaptadores"
+  }
+
+###
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+  {
+    "_uuid": "37cb92ec-c8d3-4da1-b972-61dbab10a76e",
+    "_title":"Macbook air m1",
+    "_description":"Macbook Air 13 pulgadas M1 de 256gb",
+    "_imageURL":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1664472289661",
+    "_unit":"1 pieza",
+    "_stock":47,
+    "_priceUnit":22999.00,
+    "_category":"Computadora"
+  }
+
+###
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+  {
+    "_uuid": "8e79a090-5353-46f9-ba58-9c730adad7Qf0",
+    "_title":"Macbook air m2",
+    "_description":"Macbook Air 15 pulgadas M2 de 256gb",
+    "_imageURL":"https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-M2-Pro-and-M2-Max-hero-230117.jpg.og.jpg?202308281454",
+    "_unit":"1 pieza",
+    "_stock":4,
+    "_priceUnit":28999.00,
+    "_category":"Computadora"
+  }
+
+
+
+###
+// ================================================================================
+// AHORA HACEMOS UN GET DONDE NOS REGRESARA TODOS LOS PRODUCTOS GUARDADOS EN EL PRODUCTS.JSON
+// ================================================================================
+
+GET http://localhost:3000/products
+
+###
+
+// ================================================================================
+// AHORA PODEMOS BUSCAR ALGUN PRODUCTOS QUE QUERAMOS CON EL UUID
+// ================================================================================
+
+GET http://localhost:3000/products/8e79a090-5353-46f9-ba58-9c730adad7Qf0
+
+###
+
+// ================================================================================
+// EN ESTE PUNTO INGRESAREMOS UN ARREGLO DE PRODUCTOS INDICANDO EL UUID QUE QUEREMOS
+// AGREGAR AL ARRELGO TEMPORAL DE PRODUCTOS
+// ================================================================================
+
+POST http://localhost:3000/products/cart
+Content-Type: application/json
+
+[
+  {
+    "_uuid": "37cb92ec-c8d3-4da1-b972-61dbab10a76e",
+    "cantidad": "2"
+  },
+  {
+    "_uuid": "8e79a090-5353-46f9-ba58-9c730adad7Qf0",
+    "cantidad": "1"
+  }
+]
+
+
+###
+
+// ================================================================================
+// EN ESTE PUNTO AHORA VAMOS A REMPLAZAR ALGUN PRODUCTO CON EL UUID POR OTRA DESCRIPCION
+// QUE NOSOTROS INDIQUEMOS
+// ================================================================================
+
+###
+
+PUT http://localhost:3000/admin/products/8e79a090-5353-46f9-ba58-9c730adad7Qf0
+Content-Type: application/json
+x-auth: admin
+
+{
+  "_title": "Macbook air m3",
+  "_description": "Macbook Air 17 pulgadas M3 de 256gb",
+  "_imageURL": "https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-M2-Pro-and-M2-Max-hero-230117.jpg.og.jpg?202308281454",
+  "_unit": "1 pieza",
+  "_stock": 5,
+  "_priceUnit": 31999,
+  "_category": "Computadora"
+}
+
+###
+// ================================================================================
+// UN GET PARA VER EL CAMBIO HECHO DE REMPLAZAR CON EL UUID, EN ESTE EJEMPLO ESTAMOS
+// REMPLAZANDO EL ULTIMO PRODUCTO.
+// ================================================================================
+
+GET http://localhost:3000/products
+
+###
+
+// ================================================================================
+// AHORA EN ESTE PUNTO SOLO ELIMINAREMOS ALGUN PRODUCTO INDICANDO EL UUID Y QUITANDOLO
+// DEL JSON
+// ================================================================================
+
+DELETE http://localhost:3000/admin/products/8e79a090-5353-46f9-ba58-9c730adad7Qf0
+x-auth: admin
+
+
+###
+// ================================================================================
+// UN ULTIMO GET PRODUCTS PARA VER LOS CAMBIOS HECHOS.
+// ================================================================================
+
+GET http://localhost:3000/products
+
+###
+// ================================================================================
+// NO SE POR QUE ESTOS GETS SON NECESARIOS PERO LA RUBRICA LO DICE Y AQUI ESTAN
+// ================================================================================
+
+//GET http://localhost:3000/home
+//GET http://localhost:3000/shopping_cart
+
+
+

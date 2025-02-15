@@ -1,0 +1,150 @@
+
+
+### 1. Haz una llamada para mostrar tu arreglo de productos vacío, como prueba inicial.
+GET http://localhost:3000/products
+
+### 2. Haz una llamada a la ruta para crear un producto, sin autenticación para ver el error.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+
+{
+    "title": "Producto de prueba",
+    "description": "Descripción del producto",
+    "imageUrl": "https://example.com/product_image.jpg",
+    "unit": "unidad",
+    "stock": 10,
+    "pricePerUnit": 10.99,
+    "category": "Electrónicos"
+}
+
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "title": "Producto 1",
+    "description": "Descripción del producto 1",
+    "imageUrl": "https://example.com/product1.jpg",
+    "unit": "unidad",
+    "stock": 10,
+    "pricePerUnit": 20.99,
+    "category": "Electrónicos"
+}
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "title": "Producto 2",
+    "description": "Descripción del producto 2",
+    "imageUrl": "https://example.com/product2.jpg",
+    "unit": "unidad",
+    "stock": 15,
+    "pricePerUnit": 25.99,
+    "category": "Hogar"
+}
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "title": "Producto 3",
+    "description": "Descripción del producto 3",
+    "imageUrl": "https://example.com/product3.jpg",
+    "unit": "unidad",
+    "stock": 20,
+    "pricePerUnit": 30.99,
+    "category": "Electrónicos"
+}
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "title": "Producto 4",
+    "description": "Descripción del producto 4",
+    "imageUrl": "https://example.com/product4.jpg",
+    "unit": "unidad",
+    "stock": 25,
+    "pricePerUnit": 35.99,
+    "category": "Hogar"
+}
+
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+x-auth: admin
+
+{
+    "title": "Producto 5",
+    "description": "Descripción del producto 5",
+    "imageUrl": "https://example.com/product5.jpg",
+    "unit": "unidad",
+    "stock": 30,
+    "pricePerUnit": 40.99,
+    "category": "Electrónicos"
+}
+
+### 4. Elimina un producto.
+DELETE http://localhost:3000/admin/products/{ID_DEL_PRODUCTO_3}
+x-auth: admin
+
+### 5. Consulta un producto por ID.
+GET http://localhost:3000/products/{ID_DEL_PRODUCTO_1}
+
+### 6. Consulta un producto con el parámetro de filtrado que prefieras.
+GET http://localhost:3000/products/filter?category=Electrónicos
+
+### 7. Edita cualquier producto para cambiar su nombre.
+PUT http://localhost:3000/admin/products/{ID_DEL_PRODUCTO_2}
+Content-Type: application/json
+x-auth: admin
+
+{
+    "title": "Nuevo título del Producto 2",
+    "description": "Nueva descripción del producto 2",
+    "imageUrl": "https://example.com/new_product2_image.jpg",
+    "unit": "unidad",
+    "stock": 15,
+    "pricePerUnit": 25.99,
+    "category": "Hogar"
+}
+
+### 8. Realiza una llamada de nuevo para ver que tú arreglo de productos va correctamente hasta ahora
+GET http://localhost:3000/products
+
+### 9. Añade tres productos a tu carrito con la cantidad que quieras.
+###    Recuerda que la ruta debe de regresaré el carrito como lo tienes en ese momento.
+
+POST http://localhost:3000/products/cart
+Content-Type: application/json
+
+[
+    {
+        "id": "{ID_DEL_PRODUCTO_1}",
+        "quantity": 2
+    },
+    {
+        "id": "{ID_DEL_PRODUCTO_2}",
+        "quantity": 1
+    },
+    {
+        "id": "{ID_DEL_PRODUCTO_4}",
+        "quantity": 3
+    }
+]
+
+### 10. Intenta agregar un producto cuyo ID no exista para verificar el error
+POST http://localhost:3000/products/cart
+Content-Type: application/json
+
+[
+    {
+        "id": "ID_NO_EXISTENTE",
+        "quantity": 1
+    }
+]
+

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Categoria B</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="P01_cart_AB.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="P01_index.html">
+              <img src="https://i.pinimg.com/736x/a8/bf/13/a8bf1372ef75f1ea48921a39608e84be--corgi-dog-branding-agency.jpg" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+            </a>
+          </div>
+        </nav>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="P01_index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="P01_about_us.html">Sobre nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#demo" role="button" data-bs-toggle="dropdown">Productos</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="P01_cart_1.html">Categoria A</a></li>
+                <li><a class="dropdown-item" href="P01_cart_2.html">Categoria B</a></li>
+              </ul>
+            </li>
+            <li>
+              <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Buscar productos">
+                <button class="btn btn-secondary" type="button" >Buscar</button>
+              </form>
+            </li>
+
+
+
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a role="button" class="nav-link" href="#myModalLogin" data-bs-toggle="modal"><i class="fa-regular fa-user"></i> Ingresar</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a  role="button" class="nav-link" href="P01_cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </li>
+
+            <li class="nav-item">
+              <a  role="button" class="nav-link" href="P01_orders.html"> <i class="fa-solid fa-clock-rotate-left"></i></a>
+            </li>
+
+          </ul>
+
+
+        </div>
+      </div>
+    </nav>
+
+    <!--
+    ========================================================================
+    -->
+
+    <!-- The Modal Login-->
+    <div class="modal" id="myModalLogin">
+      <div class="modal-dialog" style="width: 370px">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Iniciar Sesion</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <label for="formCorreo">Correo: </label>
+              <div class="input-group mb-3" style="padding-top: 10px; width: 300px">
+                <input id="formCorreo" type="text" class="form-control" placeholder="Ingresa tu correo" aria-describedby="basic-addon2" required>
+                <span class="input-group-text" id="add1"><i class="fa-solid fa-user"></i></span>
+              </div>
+            </form>
+
+            <form>
+              <label for="formPass">Contraseña: </label>
+              <div class="input-group mb-3" style="padding-top: 10px; width: 300px">
+                <input id="formPass" type="password" class="form-control" placeholder="Ingresa tu contraseña" aria-describedby="basic-addon2" required>
+                <span class="input-group-text" id="add2"><i class="fa-solid fa-key"></i></span>
+              </div>
+            </form>
+
+            <div style="text-align: center;">
+              <button type="submit" class="loginButton">Login</button>
+            </div>
+          </div>
+
+          <!-- Modal footer Login-->
+          <div class="modal-footer" id="loginFoot">
+            <label >¿No tienes cuenta? <a href="#myModalRegister" data-bs-toggle="modal">Regístrate aquí</a></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    ========================================================================
+    -->
+
+    <!-- The Modal Register-->
+    <div class="modal" id="myModalRegister">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Registrarse</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="row justify-content-center">
+              <div class="col-6">
+                <div class="input-group mb-3" style="padding-top: 10px; width: 220px">
+                  <input type="text" class="form-control" placeholder="Nombre(s)" aria-describedby="basic-addon2" required>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-3" style="padding-top: 10px; width: 220px">
+                  <input type="text" class="form-control" placeholder="Apellidos" aria-describedby="basic-addon2" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row ">
+              <div class="input-group mb-3" style="padding-top: 2px; width: 500px">
+                <input type="email" class="form-control" placeholder="Tu correo" aria-describedby="basic-addon2" required>
+              </div>
+            </div>
+
+            <div class="row ">
+              <div class="input-group mb-3" style="padding-top: 2px; width: 500px">
+                <input type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon2" required>
+              </div>
+            </div>
+
+            <div class="row ">
+              <div class="input-group mb-3" style="padding-top: 2px; width: 500px">
+                <input type="password" class="form-control" placeholder="Confirmar contraseña" aria-describedby="basic-addon2" required>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- Modal footer Register-->
+          <div class="modal-footer" style="display: flex; flex-direction: column; justify-content: right; align-items: end;">
+            <button  type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="alert('Felicidades te registraste')">Registrarse</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </header>
+  <main>
+
+
+    <div class="container" style="padding-left: 10px; padding-right: 10px;">
+      <div class="row justify-content-center">
+
+        <div class="container" >
+          <div class="row justify-content-center">
+
+
+            <div class="col-lg-4 col-md-3 col-sm-2 element" style="width: 320px; padding-top: 20px">
+              <div class="card">
+                <img class="card-img-top" src="https://i.pinimg.com/736x/09/94/42/099442cbd79e9b40ccf2683819ec35f5.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Platillo 1</h4>
+                  <p class="card-text">Pay de queso.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-3 col-sm-2 element" style="width: 320px; padding-top: 20px">
+              <div class="card">
+                <img class="card-img-top" src="https://www.santabarbaragrill.com/wp-content/uploads/2020/06/ensalada-santa-barbara-restaurante-1.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Platillo 2</h4>
+                  <p class="card-text">Ensalada con pan.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-3 col-sm-2 element" style="width: 320px; padding-top: 20px">
+              <div class="card">
+                <img class="card-img-top" src="https://www.todoenmexico.net/wp-content/uploads/2021/03/Pulpo-en-su-tinta-gastronomia-de-Acapulco.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Platillo 3</h4>
+                  <p class="card-text">Pulpo negro.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-3 col-sm-2 element" style="width: 320px; padding-top: 20px">
+              <div class="card">
+                <img class="card-img-top" src="https://blog.supermercadosmas.com/wp-content/uploads/2016/01/guisado-patatas-1.png" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Platillo 4</h4>
+                  <p class="card-text">Albondigas.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-3 col-sm-2 element" style="width: 320px; padding-top: 20px">
+              <div class="card">
+                <img class="card-img-top" src="https://www.okchicas.com/wp-content/uploads/2020/09/Mama-decora-comida-como-hermosos-personajes-animados-3-700x700.jpg" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Platillo 5</h4>
+                  <p class="card-text">Dumplings con caritas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+    <!-- Center-aligned -->
+    <ul class="pagination justify-content-center" style="margin: 40px ">
+      <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">»</a></li>
+    </ul>
+
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+  <script src="https://kit.fontawesome.com/549e1abe3e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

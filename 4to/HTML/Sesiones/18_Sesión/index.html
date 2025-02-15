@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+    <body>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                Deep AF
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        function changeDeepestDiv(text) {
+            let element = document.body;
+                flag = true;
+            
+            while (flag){
+                if(element.firstElementChild == null) {
+                    flag = false;
+                    element.innerHTML = text;
+                }
+                else {
+                    element = element.firstElementChild;
+                }
+            }
+            console.log("Texto cambiado");
+            return true;
+        }
+    </script>
+</html>

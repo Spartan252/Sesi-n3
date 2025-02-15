@@ -1,0 +1,80 @@
+/* Estilos para la tabla */
+
+body{
+    background-color: rgb(128, 191, 191);
+    margin: 40px;
+}
+
+h1{
+    text-align: center;
+    text-decoration-line: underline;
+    font-family: arial;
+}
+
+/*Tabla
+*/
+table {
+    width: 70%;
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #82c870;
+}
+
+
+tr:nth-child(even) {
+    background-color: #9cd237;
+}
+
+tr:nth-child(odd) {
+    background-color: #55a548;
+}
+
+tr:first-child {
+    background-color: #4762a7;
+    font-family: Arial;
+}
+
+/* Formulario
+*/
+td:hover {
+    background-color: #378771;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="checkbox"] {
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 4px rgb(27, 186, 85);
+}
+
+input[type="email"]:invalid {
+    border-color: red;
+    background-color: rgb(219, 179, 179);
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: arial;
+    border: none;
+    border-radius: 10px;
+}

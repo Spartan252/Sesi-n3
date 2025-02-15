@@ -1,0 +1,35 @@
+// Post Users
+###
+POST http://localhost:3000/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "nombre": "Dorxote",
+    "correo": "mana@gmail.com",
+    "pass": "pass123",
+    "edad": 33,
+    "sexo": "M"
+}
+
+// Get de usuarios
+###
+GET http://localhost:3000/api/users?nombre=M
+
+// Put Users
+###
+PUT http://localhost:3000/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "id": "6543dc1754af2443d73efb68",
+    "nombre": "Dorx Tejeda Updated"
+}
+
+// Delete de Users
+###
+DELETE http://localhost:3000/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "id": "6543e8ac499f97187de4f494"
+}

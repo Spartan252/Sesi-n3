@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Dorx",
+      "email": "dorxini@gmail.com",
+      "edad": 22,
+      "sexo": "H"
+    },
+    {
+      "id": 2,
+      "name": "Ramona",
+      "email": "ramona_flowers@gmail.com",
+      "edad": 22,
+      "sexo": "M"
+    },
+    {
+      "name": "Usuario nuevo",
+      "email": "nuevo@gmail.com",
+      "edad": 33,
+      "sexo": "M",
+      "id": 3
+    },
+    {
+      "name": "Usuario nuevo",
+      "email": "nuevo@gmail.com",
+      "edad": 33,
+      "sexo": "M",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "name": "Hola",
+      "sku": "PROD-NEW",
+      "price": 100,
+      "id": 1
+    },
+    {
+      "name": "NewProduct",
+      "sku": "PROD-NEW-2",
+      "price": 300,
+      "id": 2
+    }
+  ],
+  "banks": [
+    {
+      "name": "Banco_2",
+      "code": "B2"
+    }
+  ]
+}

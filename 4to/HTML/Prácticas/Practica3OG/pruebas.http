@@ -1,0 +1,148 @@
+
+
+### 1. Haz una llamada para mostrar tu arreglo de productos vacío, como prueba inicial.
+GET http://localhost:3000/products
+
+### 2. Haz una llamada a la ruta para crear un producto, sin autenticación para ver el error.
+POST http://localhost:3000/admin/products
+Content-Type: application/json
+
+[
+    {
+        "uuid": "1",
+        "title": "Tierra",
+        "description": "Planeta",
+        "imageUrl": "https://example.com/product.jpg",
+        "unit": "1",
+        "stock":"20",
+        "pricePerUnit":"150",
+        "category":"Planeta"
+    }
+]
+
+### 3. Crea 5 productos. Recuerda ponerles un ID fijo para que las siguientes pruebas sean más fáciles.
+POST http://localhost:3000/admin/products
+x-auth: admin
+Content-Type: application/json
+
+[
+    {
+        "uuid": "1",
+        "title": "Tierra",
+        "description": "Planeta",
+        "imageUrl": "https://example.com/product.jpg",
+        "unit": "1",
+        "stock":"20",
+        "pricePerUnit":"150",
+        "category":"Planeta"
+    }
+    ,
+    {
+        "uuid": "2",
+        "title": "Marte",
+        "description": "Planeta",
+        "imageUrl": "https://example.com/product2.jpg",
+        "unit": "1",
+        "stock":"30",
+        "pricePerUnit":"150",
+        "category":"Planeta"
+    }
+    ,
+    {
+        "uuid": "3",
+        "title": "Mercurio",
+        "description": "Planeta",
+        "imageUrl": "https://example.com/product3.jpg",
+        "unit": "1",
+        "stock":"40",
+        "pricePerUnit":"150",
+        "category":"Planeta"
+    }
+    ,
+    {
+        "uuid": "4",
+        "title": "Plutón",
+        "description": "Planeta",
+        "imageUrl": "https://example.com/product4.jpg",
+        "unit": "1",
+        "stock":"50",
+        "pricePerUnit":"150",
+        "category":"Planeta"
+    }
+    ,
+    {
+        "uuid": "5",
+        "title": "Jupiter",
+        "description": "Planeta",
+        "imageUrl": "https://example.com/product5.jpg",
+        "unit": "1",
+        "stock":"60",
+        "pricePerUnit":"150",
+        "category":"Planeton"
+    }
+]
+
+### 4. Elimina un producto.
+DELETE  http://localhost:3000/admin/products/1
+
+x-auth: admin
+
+
+### 5. Consulta un producto por ID.
+GET http://localhost:3000/products/2
+
+### 6. Consulta un producto con el parámetro de filtrado que prefieras.
+GET http://localhost:3000/products?category=Planeton
+
+### 7. Edita cualquier producto para cambiar su nombre.
+PUT http://localhost:3000/admin/products/3
+Content-Type: application/json
+x-auth: admin
+
+{
+    "uuid": "3",
+    "title": "Mercadona",
+    "description": "Planeta",
+    "imageUrl": "https://example.com/product3.jpg",
+    "unit": "1",
+    "stock":"40",
+    "pricePerUnit":"150",
+    "category":"Planeta"
+}
+
+### 8. Realiza una llamada de nuevo para ver que tú arreglo de productos va correctamente hasta ahora
+GET http://localhost:3000/products
+
+
+### 9. Añade tres productos a tu carrito con la cantidad que quieras.
+###    Recuerda que la ruta debe de regresaré el carrito como lo tienes en ese momento.
+
+POST http://localhost:3000/products/cart
+Content-Type: application/json
+
+[
+    {
+        "id": "{ID_DEL_PRODUCTO_1}",
+        "quantity": 2
+    },
+    {
+        "id": "{ID_DEL_PRODUCTO_2}",
+        "quantity": 1
+    },
+    {
+        "id": "{ID_DEL_PRODUCTO_4}",
+        "quantity": 3
+    }
+]
+
+### 10. Intenta agregar un producto cuyo ID no exista para verificar el error
+POST http://localhost:3000/products/cart
+Content-Type: application/json
+
+[
+    {
+        "id": "ID_NO_EXISTENTE",
+        "quantity": 1
+    }
+]
+

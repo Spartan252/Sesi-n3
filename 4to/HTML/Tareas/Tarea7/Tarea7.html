@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tarea 7</title>
+    </head>
+
+    <body>
+        <h1 style="margin: 10px;">Mira, unas funciones y operaciones</h1>
+        <script>
+            /*
+            //Callbacks
+            function printHola(value){
+                console.log("Hola "+value);
+                if(value<10)
+                    setTimeout(printHola, 1000, value+1);
+                else
+                    flagHola=true;
+            }
+
+            function printMundo(value){
+                console.log("Mundo "+value);
+                if(value<5){
+                    setTimeout(printMundo, 2000, value+1);
+                }else{
+                    flagMundo=true;
+                    ifEnd(); //al terminar uno ejecuta esta función
+                }
+            }
+
+            function ifEnd () {
+                if(flagHola && flagMundo) {
+                    console.log("FIN");
+                } else{
+                    setTimeout(ifEnd,100);
+                }
+            }
+            
+            setTimeout(printHola,1000,1); //espera 1 segundo
+            setTimeout(printMundo,2000,1);
+            */
+            /*
+            //Promises
+            function delay(ms) {
+                return new Promise(function (resolve) {
+                    setTimeout(() => resolve(), ms);
+                });
+            }
+
+            function recursiveText(mensaje, tiempo, cantidad, current) {
+                return delay(tiempo).then(() => {
+                    console.log(mensaje + ((current) * 10) + "%");
+                    if (current >= cantidad)
+                        return Promise.resolve();
+                //return new Promise((resolve) => resolve());
+                    return recursiveText(mensaje, tiempo, cantidad, current + 1);
+                });
+            }
+
+            let pHr = recursiveText("Hola ", 1000, 10, 1);
+            let pMr = recursiveText("Mundo ", 2000, 5, 1);
+            pHr.then(() => pMr)
+                .then(() => console.log("FIN"));
+            */
+            
+           //Async/await
+            function delay(ms) {
+                return new Promise(function (resolve) {
+                    setTimeout(() => resolve(), ms);
+                });
+            }
+
+            async function printHola(){
+                for(let i=0; i<5; i++){
+                    let response = await delay(1000);
+                    console.log("Hola"+i);
+                }
+                return Promise.resolve();
+            }
+
+            async function printMundo(){
+                for(let i=0; i<5; i++){
+                    let response = await delay(2000);
+                    console.log("Mundo"+i);
+                }
+                return Promise.resolve();
+            }
+
+            (async function tareaFin(){
+                await Promise.all([printHola(), printMundo()] );
+                console.log("FIN");
+            })();
+
+            Promise.all([
+                printHola(),
+                printMundo()
+            ]).then(()=> console.log("fin"));
+        </script>
+
+    </body>
+</html>

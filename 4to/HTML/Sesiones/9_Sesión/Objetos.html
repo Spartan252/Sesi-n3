@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ssión 9</title>
+    </head>
+
+    <body>
+
+        <script>
+            // Ejemplo declaración de objetos
+            let obj1 = new Object();
+            let obj2 = {};
+
+            //Declarando las propiedades del objeto
+            let alumno1 = {
+                nombre: "Pepito",
+                carrera: "ISC",
+                "apellido paterno":"Camila jeje"
+            }
+
+
+            //función generadora
+            function CrearAlumno(nombre, carrera){
+                return{
+                    nombre:nombre,
+                    carrera:carrera
+                }
+            }
+            let alumno_creado_1 = CrearAlumno("Raul","ISC")
+
+
+            //---Constructores---
+            // Como función
+            function Alumno (nombre, carrera) {
+
+                this.nombre = nombre;
+                this.carrera = carrera;
+
+            }
+            let alu_constr_1 = new Alumno("Juan","ISC");
+
+            // Como clase
+            class AlumnoC {
+                constructor(nombre, carrera){
+
+                    this.nombre = nombre;
+                    this.carrera = carrera;
+                }
+            }
+            let alu_constr_2 = new AlumnoC("María", "IE");
+
+
+            //----------------------------------------------------------
+            // Ejemplo declaración de objetos
+            let obj3 = new Object();
+
+            //Declarando las propiedades del objeto
+            let celular = {
+                marca: "marca",
+                modelo: "modelo",
+                año: "año",
+                precio: "precio",
+                venta: "si"
+            }
+
+
+            //función generadora
+            function CrearCelular(marca, modelo, año, precio,venta){
+                return{
+                    marca:marca,
+                    modelo:modelo,
+                    año:año,
+                    precio:precio,
+                    venta:venta,
+                }
+            }
+            let celular_creado_1 = CrearCelular("Samsung","Galaxy","2024","$24,000","Si")
+        </script>
+
+    </body>
+</html>

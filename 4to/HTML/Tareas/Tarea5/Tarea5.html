@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tarea 5</title>
+    </head>
+
+    <body>
+        <h1 style="margin: 10px;">Mira, unas funciones y operaciones</h1>
+        <script>
+            // arreglo9 de calificaciones
+            const arr_calif = [
+                [6, 7, 8, 9, 10, 7],
+                [4, 9, 6, 5, 6],
+                [10, 10, 10, 10, 10],
+                [9, 7, 8, 6, 5, 6],
+                [6, 7, 4, 7, 5],
+                [10, 8, 6, 7, 10],
+                [0, 0, 0, 0, 0]
+            ];
+
+            //funciones
+            var Aprob = (grupo, promedio) => {
+                console.log(`El grupo ${grupo} aprobó con un promedio de: ${promedio.toFixed(1)}`);
+                if (promedio == 10) {
+                    console.log("+Estos ya se pasaron la materia")
+                }
+            };
+
+            var Reprob = (grupo, promedio) => {
+                console.log(`El grupo ${grupo} reprobó con un promedio de: ${promedio.toFixed(1)}`);
+                if (promedio == 0) {
+                    console.log("-Este grupo ya valió    -   No les fue peor nada más porque no se puede")
+                }   else {
+                    console.log("-Este grupo ya valió")
+                }
+            };
+
+            //getters
+            var getProm = (arreglo) => {
+                const suma = arreglo.reduce((sum_tot, val_act) => sum_tot + val_act, 0);
+                var prom = suma / arreglo.length;
+                return prom;
+            };
+
+            const getCal = (arr_calif, Reprob, Aprob, getProm) => {
+                arr_calif.forEach((grupo, cal) => {
+                    const prom = getProm(grupo);
+                    if (prom >= 6) {
+                        Aprob(cal + 1, prom);
+                    } else {
+                        Reprob(cal + 1, prom);
+                    }
+                });
+                console.log("Arribita están los grupos que aprobaron y los que no");
+            };
+
+
+            //Extas
+            const getCalMay = (arr) => {
+                const CalMay = Math.max(...arr.flat());
+                console.log(`La calificación más alta fue: ${CalMay}`);
+            };
+
+            const getCalMen = (arr) => {
+                const CalMen = Math.min(...arr.flat());
+                console.log(`La calificación más baja fue: ${CalMen}`);
+            };
+
+
+
+            getCal(arr_calif, Reprob, Aprob, getProm);
+            getCalMay(arr_calif);
+            getCalMen(arr_calif);
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tarea 4</title>
+    </head>
+
+    <body>
+        <h1 style="margin: 10px;">Mira, unas funciones y operaciones</h1>
+        <script>
+            console.log("" + 1 + 0);
+            console.log("" - 1+0);
+            console.log(true + false);
+            console.log(6/"3");
+            console.log("2" * "3");
+            console.log(4 + 5 + "px");
+            console.log("$" + 4 + 5);
+            console.log("4" - 2);
+            console.log("4px" - 2);
+            console.log(7/0);
+            console.log(" -9 " + 5);
+            console.log(" -9 " - 5);
+            console.log(null + 1);
+            console.log(undefined + 1);
+
+
+            function numMayor(numeros) {
+                if (numeros.length === 0) {
+                    return null;
+                }
+
+                let num_mayor = numeros[0];
+
+                for (let i = 1; i < numeros.length; i++) {
+                    if (numeros[i] > num_mayor) {
+                        num_mayor = numeros[i];
+                    }
+                }
+
+                return num_mayor;
+            }
+
+            let numeros = [3, 6, 9, 2, 43, 89, 21];
+            console.log("El mayor número es:", numMayor(numeros));
+        </script>
+
+    </body>
+</html>

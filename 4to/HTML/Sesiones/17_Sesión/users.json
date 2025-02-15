@@ -1,0 +1,26 @@
+[
+
+        {
+        "id": 1,
+        "name": "Pedro",
+        "email": "pedrito_el_crack@gmail.com",
+        "edad": 25,
+        "sexo": "H"
+        },
+
+        {
+        "id": 2,
+        "name": "Ramona",
+        "email": "ramona_flowers@gmail.com",
+        "edad": 22,
+        "sexo": "M"
+        },
+
+        {
+        "id": 3,
+        "name": "Juanito",
+        "email": "juan@gmail.com",
+        "edad": 12,
+        "sexo": "diario"
+        }
+]

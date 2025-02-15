@@ -1,0 +1,13 @@
+
+    h2{
+        background-color: rgb(172, 84, 84);
+        border: 3px dashed;
+        border-radius: 10px;
+    }
+    #p2{
+        background-color: rgb(167, 150, 150);
+        border: 3px dashed;
+        border-radius: 10px;
+        font-family: Arial;
+    }
+

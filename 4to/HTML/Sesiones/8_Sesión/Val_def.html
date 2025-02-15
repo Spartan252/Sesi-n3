@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ssión 8</title>
+    </head>
+
+    <body>
+        <script>
+            // Valores por defecto a parámetro
+            function fun_1 (variable_1 = 5){
+                return variable_1 + 3;
+            }
+            let resultado = fun_1();
+            console.log("resultado: ", resultado);
+
+
+            // Prueba del scope
+            let v3 = 3;
+            function fun_2 (v1 = 1, v2 = 1){
+                return  v1 + v2 + v3;
+            }
+            console.log("Output fun_2: ", fun_2());
+
+
+            // Función como variable
+            function showMessage (message){
+                console.log(message);
+            }
+            let var_mensaje = showMessage;
+            var_mensaje('¡Hola pitaya!'); // Ejecuta la función 
+            console.log(var_mensaje); // Muestra el código de la función 
+            console.log(typeof var_mensaje); // "function"
+
+            // De otra forma:
+            let var_mensaje_2 = function showMessage_2(message){
+                console.log(message);
+            }
+            var_mensaje_2('¡Hola pitaya 2!');
+
+
+            //The chill function
+            let names_array = [
+                ["Juan", 4],
+                ["Pedro", 3],
+                ["Luis", 14],
+                ["Andrea", 8]
+            ];
+            function the_chill_function(names_array, n){
+                if (names_array.length === 0  || n >= names_array.length) {
+                    return null;
+                }
+                return  names_array[n][0] + " " + names_array[n][1];
+            }
+            let n = 4;
+            for (let i = 0; i < n; i++) {
+                console.log("Salida de la función chill: ", the_chill_function(names_array, i))
+            }
+            
+
+            // Callback
+            function createNewUser(id, user_name, storeData) {
+                if(id < 0 && id < 1000){
+                    storeData(id, user_name);
+                }
+                else{
+                    console.log("Id incorrecto");
+                }
+            }
+            function store (id, name) {
+                console.log("Guardado: \nID: ", id, "\nUser_name:    ", name);
+            }
+            createNewUser(25, 'Dorx 1', store);
+            createNewUser(1001, 'Dorx 2', store);
+            createNewUser(10, 'Dorx 3', function(id, name) { // Función anónima
+                console.log("Guardado: \nID: ", id, "\nUser_name:    ", name);
+            });
+        </script>
+
+    </body>
+</html>

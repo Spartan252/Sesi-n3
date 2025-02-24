@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "d:/Visual Studio/Py-clases/6to/Fundamentos_sistemas_operativos/Proyectos/Proyecto2",
+      "program": "d:/Visual Studio/Py-clases/6to/Fundamentos_sistemas_operativos/Proyectos/Proyecto2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
